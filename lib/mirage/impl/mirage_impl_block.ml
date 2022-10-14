@@ -270,6 +270,7 @@ let docteur ?(mode = `Fast) ?(disk = disk) ?(analyze = analyze) ?branch
       (`Spt, docteur_solo5 mode extra_deps disk branch analyze remote);
       (`Muen, docteur_solo5 mode extra_deps disk branch analyze remote);
       (`Genode, docteur_solo5 mode extra_deps disk branch analyze remote);
+      (`Frt, docteur_solo5 mode extra_deps disk branch analyze remote);
     ]
     ~default:(docteur_unix mode extra_deps disk branch analyze remote)
 

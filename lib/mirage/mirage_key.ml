@@ -64,7 +64,7 @@ let pp_group = Fmt.(option ~none:(any "the unikernel") @@ fmt "the %s group")
 
 type mode_unix = [ `Unix | `MacOSX ]
 type mode_xen = [ `Xen | `Qubes ]
-type mode_solo5 = [ `Hvt | `Spt | `Virtio | `Muen | `Genode ]
+type mode_solo5 = [ `Hvt | `Spt | `Virtio | `Muen | `Genode | `Frt ]
 type mode = [ mode_unix | mode_xen | mode_solo5 ]
 
 let target_conv : mode Cmdliner.Arg.conv =
@@ -80,6 +80,7 @@ let target_conv : mode Cmdliner.Arg.conv =
         ("qubes", `Qubes);
         ("genode", `Genode);
         ("spt", `Spt);
+        ("frt", `Frt);
       ]
   in
   (parser, printer)
@@ -94,6 +95,7 @@ let target_serialize ppf = function
   | `Qubes -> Fmt.pf ppf "`Qubes"
   | `Genode -> Fmt.pf ppf "`Genode"
   | `Spt -> Fmt.pf ppf "`Spt"
+  | `Frt -> Fmt.pf ppf "`Frt"
 
 let pp_target fmt m = snd target_conv fmt m
 
@@ -110,7 +112,7 @@ let target =
   let doc =
     "Target platform to compile the unikernel for. Valid values are: $(i,xen), \
      $(i,qubes), $(i,unix), $(i,macosx), $(i,virtio), $(i,hvt), $(i,spt), \
-     $(i,muen), $(i,genode)."
+     $(i,muen), $(i,genode), $(i,frt)."
   in
   let conv =
     Arg.conv ~conv:target_conv ~runtime_conv:"target"

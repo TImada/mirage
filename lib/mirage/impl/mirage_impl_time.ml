@@ -25,5 +25,6 @@ let default_time =
       (`Spt, solo5_time);
       (`Muen, solo5_time);
       (`Genode, solo5_time);
+      (`Frt, solo5_time);
     ]
     ~default:unix_time

@@ -72,7 +72,7 @@ Help configure --man-format=plain
   MIRAGE PARAMETERS
          -t TARGET, --target=TARGET (absent=unix or MODE env)
              Target platform to compile the unikernel for. Valid values are:
-             xen, qubes, unix, macosx, virtio, hvt, spt, muen, genode. 
+             xen, qubes, unix, macosx, virtio, hvt, spt, muen, genode, frt. 
   
   CONFIGURE OPTIONS
          --context-file=FILE (absent=mirage.context)
@@ -230,7 +230,7 @@ Configure help --help=plain
   MIRAGE PARAMETERS
          -t TARGET, --target=TARGET (absent=unix or MODE env)
              Target platform to compile the unikernel for. Valid values are:
-             xen, qubes, unix, macosx, virtio, hvt, spt, muen, genode. 
+             xen, qubes, unix, macosx, virtio, hvt, spt, muen, genode, frt. 
   
   CONFIGURE OPTIONS
          --context-file=FILE (absent=mirage.context)

@@ -33,5 +33,6 @@ let default_argv =
       (`Muen, argv_solo5);
       (`Genode, argv_solo5);
       (`Spt, argv_solo5);
+      (`Frt, argv_solo5);
     ]
     ~default:argv_unix

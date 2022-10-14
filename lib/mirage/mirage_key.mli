@@ -36,7 +36,7 @@ val abstract : 'a key -> t [@@ocaml.deprecated "Use Mirage.Key.v."]
 
 type mode_unix = [ `Unix | `MacOSX ]
 type mode_xen = [ `Xen | `Qubes ]
-type mode_solo5 = [ `Hvt | `Spt | `Virtio | `Muen | `Genode ]
+type mode_solo5 = [ `Hvt | `Spt | `Virtio | `Muen | `Genode | `Frt ]
 type mode = [ mode_unix | mode_xen | mode_solo5 ]
 
 (** {2 Mirage keys} *)
@@ -44,7 +44,7 @@ type mode = [ mode_unix | mode_xen | mode_solo5 ]
 val target : mode key
 (** [-t TARGET]: Key setting the configuration mode for the current project. Is
     one of ["unix"], ["macosx"], ["xen"], ["qubes"], ["virtio"], ["hvt"],
-    ["muen"], ["genode"] or ["spt"]. *)
+    ["muen"], ["genode"] , ["spt"] or ["frt"]. *)
 
 val pp_target : mode Fmt.t
 (** Pretty printer for the mode. *)
